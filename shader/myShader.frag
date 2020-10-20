@@ -51,7 +51,7 @@ float remap(float x, float a1, float b1, float a2, float b2) {
 float tile(vec2 uv) {
     float t = 0.005;
     //t += twoCircles(uv);
-    float time = pow(remap(sin(uTime*6.28 / period - 3.14), -1., 1., 0., 1.), 15.);
+    float time = pow(abs(remap(sin(uTime*6.28 / period - 3.14), -1., 1., 0., 1.)), 15.);
     float p = mix(0., -.55, time);
     t += line(uv, vec2(-0.5, -p), vec2(p, 0.5));
     t += line(uv, vec2(-p, -0.5), vec2(0.5, p));
